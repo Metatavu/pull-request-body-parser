@@ -1,0 +1,19 @@
+name: "Pull request body parser"
+description: |
+  Parses specified keyword from pull requests body (description) and outputs its value.
+  E.g. keyword=value outputs value
+
+inputs:
+  keyword:
+    description: "Keyword to look for in pull requests body"
+    required: true
+  outputPrefix:
+    description: "Prefix to use for output e.g. parent/child/"
+
+outputs:
+  keywordValue:
+    description: "Value associated with given keyword"
+
+runs:
+  using: node20
+  main: dist/index.js
